@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
     } //--- Oncreate Finish
 
+    //-----------------------------------------------------------
+
     private void startFloatingViewService() {
         Intent intent = new Intent(MainActivity.this, FloatingViewService.class);
         startService(intent);
