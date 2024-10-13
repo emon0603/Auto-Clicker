@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Auto Clicker</string>
+    <string name="accessibility_service_description">accessibility_service_description</string>
+    <string name="string_change">Change</string>
+    <string name="string_done">Done</string>
+    <string name="string_start">Start</string>
+    <string name="string_stop">Stop</string>
+    <string name="accessibility_service_label">accessibility_service_label</string>
+</resources>
