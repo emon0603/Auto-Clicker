@@ -102,7 +102,6 @@ public class FloatingViewService extends Service {
                 Toast.makeText(FloatingViewService.this,
                         "Floating icon clicked!",
                         Toast.LENGTH_SHORT).show();
-
                 // Perform any action when the floating icon is clicked
                 // Example: launch an activity, open a menu, etc.
             }

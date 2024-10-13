@@ -7,49 +7,33 @@ import android.content.pm.PackageManager;
 import android.view.accessibility.AccessibilityEvent;
 import android.util.Log;
 
+
+import android.accessibilityservice.AccessibilityService;
+import android.graphics.Rect;
+import android.util.Log;
+import android.view.accessibility.AccessibilityEvent;
+
 public class MyAccessibilityService extends AccessibilityService {
-
-    private static final String TAG = "MyAccessibilityService";
-
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
-        // Log the type of event that occurred
-        Log.d(TAG, "onAccessiblity");
-
-        String packname= event.getPackageName().toString();
-        PackageManager packageManager = this.getPackageManager();
-
-        try {
-            ApplicationInfo applicationInfo = packageManager.getApplicationInfo(packname,0);
-            CharSequence charSequence = packageManager.getApplicationLabel(applicationInfo);
-            Log.e(TAG,"App name is:"+charSequence);
-
-        } catch (PackageManager.NameNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
-
+        // Handle accessibility events if needed
     }
 
     @Override
     public void onInterrupt() {
-        // Handle cases when the service is interrupted (e.g. low memory)
-        Log.d(TAG, "Accessibility service interrupted");
+        // Handle interruptions
     }
 
-    @Override
-    public void onServiceConnected() {
-        super.onServiceConnected();
+    public void simulateClick(int x, int y) {
+        // Use the AccessibilityService to perform a click at the given coordinates
+        // Note: You might need to request permission for performing actions on other apps
 
-        AccessibilityServiceInfo info = new AccessibilityServiceInfo();
-        info.eventTypes = AccessibilityEvent.TYPE_VIEW_CLICKED |
-                AccessibilityEvent.TYPE_VIEW_FOCUSED;
+        Log.d("MyAccessibilityService", "Simulating click at: (" + x + ", " + y + ")");
 
-        info.feedbackType = AccessibilityServiceInfo.FEEDBACK_SPOKEN;
-        info.notificationTimeout = 100;
+        // Create a new motion event for the click
+        performGlobalAction(GLOBAL_ACTION_NOTIFICATIONS); // Example action, you may want to customize this
 
-        Log.d(TAG,"my");
-
-
+        // Note: You may need additional code to simulate an actual touch event
     }
 }
+

@@ -94,11 +94,7 @@ public class MainActivity extends AppCompatActivity {
             startFloatingViewService();
         }
 
-
-
     }
-
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -114,9 +110,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
-
-
 
 
 }
